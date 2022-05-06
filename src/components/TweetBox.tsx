@@ -6,13 +6,15 @@ import clsx from "clsx";
 const TweetBox = () => {
   const [text, setText] = useState<string>("");
   return (
-    <div className="flex flex-col sm:flex-row space-x-4 w-full">
+    <div className="flex flex-col sm:flex-row space-x-4 w-full border-b border-gray-300 p-5">
       <div>
         <UserIcon className="mt-4 h-14 w-14 text-gray-400 bg-gray-200 rounded-full p-2" />
       </div>
       <div className="w-full">
         <form className="">
           <input
+            value={text}
+            onChange={(e) => setText(e.target.value)}
             type="text"
             placeholder="What's Happening"
             className="h-20 w-full focus:outline-none"
@@ -30,10 +32,10 @@ const TweetBox = () => {
             ))}
           </div>
           <button
-            disabled={text === ""}
+            disabled={!text}
             className={clsx(
               "bg-twitter text-white rounded-full px-5 py-2 font-bold",
-              text === "" && "bg-red-500"
+              text === "" && "bg-blue-300 cursor-not-allowed"
             )}
           >
             Tweet
