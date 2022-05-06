@@ -1,11 +1,11 @@
 import type { NextPage } from "next";
-import Head from "next/head";
+import Homepage from "../components/Homepage";
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <h1 className="text-6xl text-indigo-600 italic">this is twitter</h1>
-    </div>
+    <>
+      <Homepage />
+    </>
   );
 };
 
